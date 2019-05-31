@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  myDB:
+    image: myDB
+    ports:
+      - "80:3306"
+    environment:
+     - MYSQL_ROOT_PASSWORD=
+     - MYSQL_USER=root
+     - MYSQL_JBDC_URL=jdbc:mysql://localhost:3306/mydb
+  myApp:
+    image: myApp
+    ports:
+      - "8080:8080"
