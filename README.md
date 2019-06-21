@@ -49,6 +49,12 @@ docker images -q |xargs docker rmi
 Will list all docker images and then docker rmi them.
 **Note End**
 
+#Cannot delete image try this
+docker rmi [image_id] --force
+
+#Can’t delete docker image with dependent child images, try this
+docker rm $(docker ps -aq)
+
 docker run [OPTIONS] [IMAGE] [COMMAND] [ARG...]
 **Example docker run command**
 docker run -p 80:8080 --name kitura -d ibmcom/kitura-ubuntu
